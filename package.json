@@ -6,10 +6,12 @@
   "scripts": {
     "build": "tsc",
     "watch": "tsc -w",
-    "serve": "lite-server"
+    "serve": "lite-server",
+    "deploy": "gh-pages -d ."
   },
   "devDependencies": {
-    "typescript": "^5.3.3",
-    "lite-server": "^2.6.1"
+    "gh-pages": "^6.3.0",
+    "lite-server": "^2.6.1",
+    "typescript": "^5.3.3"
   }
-} 
+}

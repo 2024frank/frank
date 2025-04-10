@@ -98,62 +98,33 @@ function handleSwipe() {
         }
     }
 }
-// Matrix animation with enhanced colors
-const canvas = document.createElement("canvas");
+// Matrix background animation
+const canvas = document.getElementById('matrixCanvas');
+const ctx = canvas.getContext('2d');
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
-const matrixBackground = document.querySelector(".matrix-background");
-if (matrixBackground) {
-    matrixBackground.appendChild(canvas);
-}
-const ctx = canvas.getContext("2d");
-const columns = canvas.width / 20;
-const drops = Array(Math.floor(columns)).fill(1);
-// Create a gradient for the matrix effect
-function createGradient() {
-    if (!ctx)
-        return null;
-    const gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
-    gradient.addColorStop(0, '#00ff00');
-    gradient.addColorStop(0.5, '#00ffff');
-    gradient.addColorStop(1, '#0000ff');
-    return gradient;
+const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*()';
+const fontSize = 14;
+const columns = canvas.width / fontSize;
+const drops = [];
+for (let i = 0; i < columns; i++) {
+    drops[i] = 1;
 }
 function drawMatrix() {
-    if (!ctx)
-        return;
-    ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+    ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
     ctx.fillRect(0, 0, canvas.width, canvas.height);
-    // Use gradient for text
-    const gradient = createGradient();
-    if (gradient) {
-        ctx.fillStyle = gradient;
-    }
-    else {
-        ctx.fillStyle = "#00ff00";
-    }
-    ctx.font = "20px monospace";
-    drops.forEach((y, x) => {
-        // Randomize character set for more variety
-        const charSets = [
-            String.fromCharCode(33 + Math.random() * 94), // Standard ASCII
-            String.fromCharCode(0x30A0 + Math.random() * 96), // Japanese Hiragana
-            String.fromCharCode(0x4E00 + Math.random() * 20992), // Chinese characters
-        ];
-        const text = charSets[Math.floor(Math.random() * charSets.length)];
-        // Add slight color variation
-        if (Math.random() > 0.95) {
-            ctx.fillStyle = `hsl(${Math.random() * 60 + 120}, 100%, 50%)`;
+    ctx.fillStyle = '#0F0';
+    ctx.font = `${fontSize}px monospace`;
+    for (let i = 0; i < drops.length; i++) {
+        const text = chars[Math.floor(Math.random() * chars.length)];
+        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+            drops[i] = 0;
         }
-        ctx.fillText(text, x * 20, y * 20);
-        if (y * 20 > canvas.height && Math.random() > 0.975) {
-            drops[x] = 0;
-        }
-        drops[x]++;
-    });
-    requestAnimationFrame(drawMatrix);
+        drops[i]++;
+    }
 }
-drawMatrix();
+setInterval(drawMatrix, 33);
 // Add parallax effect to the welcome text
 const welcomeText = document.querySelector('h1');
 if (welcomeText) {
@@ -244,9 +215,9 @@ document.querySelectorAll('.image-slider').forEach((slider) => {
     // Re-center on window resize
     window.addEventListener('resize', centerContent);
 });
-// Add scroll reveal animations
+// Scroll reveal animations
 function revealOnScroll() {
-    const elements = document.querySelectorAll('.project, .skill-item, .timeline-item, .education-item');
+    const elements = document.querySelectorAll('.project, .skill-item, .timeline-item, .education-item, .contact-item');
     elements.forEach(element => {
         const elementTop = element.getBoundingClientRect().top;
         const elementVisible = 150;
@@ -256,8 +227,35 @@ function revealOnScroll() {
     });
 }
 window.addEventListener('scroll', revealOnScroll);
-window.addEventListener('load', revealOnScroll);
-// Add particle effect to the background
+// Create sustainable leaf animation
+function createLeaves() {
+    const leafContainer = document.createElement('div');
+    leafContainer.className = 'leaves';
+    document.body.appendChild(leafContainer);
+    for (let i = 0; i < 15; i++) {
+        const leaf = document.createElement('div');
+        leaf.className = 'leaf';
+        // Random position
+        leaf.style.left = `${Math.random() * 100}%`;
+        leaf.style.top = `${Math.random() * 100}%`;
+        // Random size
+        const size = Math.random() * 15 + 10;
+        leaf.style.width = `${size}px`;
+        leaf.style.height = `${size}px`;
+        // Random animation duration
+        leaf.style.animationDuration = `${Math.random() * 20 + 15}s`;
+        // Random animation delay
+        leaf.style.animationDelay = `${Math.random() * 10}s`;
+        leafContainer.appendChild(leaf);
+    }
+}
+// Create solar panel element
+function createSolarPanel() {
+    const solarPanel = document.createElement('div');
+    solarPanel.className = 'solar-panel';
+    document.body.appendChild(solarPanel);
+}
+// Enhanced particle effect with sustainable theme
 function createParticles() {
     const particleContainer = document.createElement('div');
     particleContainer.className = 'particles';
@@ -279,11 +277,246 @@ function createParticles() {
         particleContainer.appendChild(particle);
     }
 }
-createParticles();
-// Handle window resize for matrix canvas
+function createWindTurbine() {
+    const turbine = document.createElement('div');
+    turbine.className = 'wind-turbine';
+    const base = document.createElement('div');
+    base.className = 'turbine-base';
+    const blades = document.createElement('div');
+    blades.className = 'turbine-blades';
+    // Create three blades
+    for (let i = 0; i < 3; i++) {
+        const blade = document.createElement('div');
+        blade.className = 'blade';
+        blades.appendChild(blade);
+    }
+    turbine.appendChild(base);
+    turbine.appendChild(blades);
+    document.body.appendChild(turbine);
+}
+function createBinaryRain() {
+    const binaryContainer = document.createElement('div');
+    binaryContainer.className = 'binary-rain';
+    document.body.appendChild(binaryContainer);
+    const binaryChars = '01';
+    const columns = Math.floor(window.innerWidth / 20);
+    for (let i = 0; i < columns; i++) {
+        const drop = document.createElement('div');
+        drop.className = 'binary-drop';
+        drop.style.left = `${i * 20}px`;
+        drop.style.animationDelay = `${Math.random() * 5}s`;
+        drop.textContent = binaryChars[Math.floor(Math.random() * binaryChars.length)];
+        binaryContainer.appendChild(drop);
+    }
+}
+function createCircuitBoard() {
+    const circuitContainer = document.createElement('div');
+    circuitContainer.className = 'circuit-board';
+    document.body.appendChild(circuitContainer);
+}
+// Function to handle hover-based image cycling for sliders
+function initializeHoverImageCycling() {
+    // Find project cards that contain an image slider
+    document.querySelectorAll('.project').forEach(projectCard => {
+        const slider = projectCard.querySelector('.image-slider');
+        // Only proceed if this project card actually has a slider
+        if (!slider)
+            return;
+        const images = Array.from(slider.querySelectorAll('.slider-item'));
+        // Don't cycle if there's only one image or none
+        if (images.length <= 1)
+            return;
+        let intervalId = null;
+        let currentIndex = 0;
+        const cycleDelay = 1800; // Time in milliseconds between image changes
+        const startCycling = () => {
+            // Clear any existing interval first
+            if (intervalId)
+                clearInterval(intervalId);
+            intervalId = window.setInterval(() => {
+                currentIndex = (currentIndex + 1) % images.length;
+                const targetImage = images[currentIndex];
+                // Calculate scroll position to center the target image in the slider view
+                const scrollLeftTarget = targetImage.offsetLeft + targetImage.offsetWidth / 2 - slider.offsetWidth / 2;
+                slider.scrollTo({
+                    left: scrollLeftTarget,
+                    behavior: 'smooth' // Use smooth scrolling animation
+                });
+            }, cycleDelay);
+        };
+        const stopCycling = () => {
+            if (intervalId) {
+                clearInterval(intervalId);
+                intervalId = null;
+            }
+            // Optional: Reset slider to the first image when hover stops
+            // slider.scrollTo({ left: 0, behavior: 'smooth' });
+            // currentIndex = 0;
+        };
+        // Start cycling when mouse enters the project card
+        projectCard.addEventListener('mouseenter', startCycling);
+        // Stop cycling when mouse leaves the project card
+        projectCard.addEventListener('mouseleave', stopCycling);
+        // Also stop cycling if the user starts manually dragging the slider
+        slider.addEventListener('mousedown', stopCycling);
+        slider.addEventListener('touchstart', stopCycling);
+    });
+}
+// Initialize all functionality when DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+    // Tab management
+    const tabButtons = document.querySelectorAll('.tab-button');
+    const tabContents = document.querySelectorAll('.tab-content');
+    tabButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const tabId = button.dataset.tab;
+            // Remove active class from all buttons and contents
+            tabButtons.forEach(btn => btn.classList.remove('active'));
+            tabContents.forEach(content => content.classList.remove('active'));
+            // Add active class to clicked button and corresponding content
+            button.classList.add('active');
+            document.getElementById(tabId)?.classList.add('active');
+            // Trigger scroll reveal for newly visible content
+            revealOnScroll();
+        });
+    });
+    // Initialize image sliders
+    initializeImageSliders();
+    // Initialize particle effects
+    createParticles();
+    // Initialize leaf animations
+    createLeaves();
+    // Initialize solar panel
+    createSolarPanel();
+    createWindTurbine();
+    // Add hover effects to headings
+    document.querySelectorAll('h3').forEach(heading => {
+        heading.addEventListener('mouseenter', () => {
+            heading.classList.add('hover');
+        });
+        heading.addEventListener('mouseleave', () => {
+            heading.classList.remove('hover');
+        });
+    });
+    // Add hover effects to skill items
+    document.querySelectorAll('.skill-item').forEach(skill => {
+        skill.addEventListener('mouseenter', () => {
+            skill.classList.add('hover');
+        });
+        skill.addEventListener('mouseleave', () => {
+            skill.classList.remove('hover');
+        });
+    });
+    // Add hover effects to project links
+    document.querySelectorAll('.project-link').forEach(link => {
+        link.addEventListener('mouseenter', () => {
+            link.classList.add('hover');
+        });
+        link.addEventListener('mouseleave', () => {
+            link.classList.remove('hover');
+        });
+    });
+    // Add hover effects to contact items
+    document.querySelectorAll('.contact-item').forEach(contact => {
+        contact.addEventListener('mouseenter', () => {
+            contact.classList.add('hover');
+        });
+        contact.addEventListener('mouseleave', () => {
+            contact.classList.remove('hover');
+        });
+    });
+    // Initialize the new hover-based image cycling
+    initializeHoverImageCycling();
+    // Trigger initial scroll reveal
+    revealOnScroll();
+    createBinaryRain();
+    createCircuitBoard();
+});
+// Image slider functionality
+function initializeImageSliders() {
+    document.querySelectorAll('.image-slider').forEach((slider) => {
+        const htmlSlider = slider;
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+        // Mouse events
+        htmlSlider.addEventListener('mousedown', (e) => {
+            isDown = true;
+            htmlSlider.style.cursor = 'grabbing';
+            startX = e.pageX - htmlSlider.offsetLeft;
+            scrollLeft = htmlSlider.scrollLeft;
+        });
+        htmlSlider.addEventListener('mouseleave', () => {
+            isDown = false;
+            htmlSlider.style.cursor = 'grab';
+        });
+        htmlSlider.addEventListener('mouseup', () => {
+            isDown = false;
+            htmlSlider.style.cursor = 'grab';
+        });
+        htmlSlider.addEventListener('mousemove', (e) => {
+            if (!isDown)
+                return;
+            e.preventDefault();
+            const x = e.pageX - htmlSlider.offsetLeft;
+            const walk = (x - startX) * 2;
+            htmlSlider.scrollLeft = scrollLeft - walk;
+        });
+        // Touch events
+        htmlSlider.addEventListener('touchstart', (e) => {
+            isDown = true;
+            startX = e.touches[0].pageX - htmlSlider.offsetLeft;
+            scrollLeft = htmlSlider.scrollLeft;
+        });
+        htmlSlider.addEventListener('touchend', () => {
+            isDown = false;
+        });
+        htmlSlider.addEventListener('touchmove', (e) => {
+            if (!isDown)
+                return;
+            e.preventDefault();
+            const x = e.touches[0].pageX - htmlSlider.offsetLeft;
+            const walk = (x - startX) * 2;
+            htmlSlider.scrollLeft = scrollLeft - walk;
+        });
+        // Add hover effect to slider images
+        const sliderImages = htmlSlider.querySelectorAll('img');
+        sliderImages.forEach(img => {
+            img.addEventListener('mouseenter', () => {
+                img.style.transform = 'scale(1.05)';
+                img.style.transition = 'transform 0.3s ease';
+            });
+            img.addEventListener('mouseleave', () => {
+                img.style.transform = 'scale(1)';
+            });
+        });
+        // Center the content
+        const centerContent = () => {
+            const sliderWidth = htmlSlider.offsetWidth;
+            const scrollWidth = htmlSlider.scrollWidth;
+            const centerOffset = (scrollWidth - sliderWidth) / 2;
+            htmlSlider.scrollLeft = centerOffset;
+        };
+        // Center on load and resize
+        window.addEventListener('load', centerContent);
+        window.addEventListener('resize', centerContent);
+    });
+}
+// Handle window resize
 window.addEventListener('resize', () => {
+    // Update matrix canvas
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
-    drops.length = Math.floor(canvas.width / 20);
+    drops.length = Math.floor(canvas.width / fontSize);
     drops.fill(1);
+    // Re-center image sliders
+    document.querySelectorAll('.image-slider').forEach((slider) => {
+        const htmlSlider = slider;
+        const sliderWidth = htmlSlider.offsetWidth;
+        const scrollWidth = htmlSlider.scrollWidth;
+        const centerOffset = (scrollWidth - sliderWidth) / 2;
+        htmlSlider.scrollLeft = centerOffset;
+    });
+    // Re-run scroll reveal
+    revealOnScroll();
 });
