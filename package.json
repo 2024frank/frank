@@ -4,10 +4,10 @@
   "description": "Frank Kusi Appiah's Portfolio",
   "main": "index.ts",
   "scripts": {
-    "build": "tsc",
+    "build": "tsc && cp *.html *.css *.png *.svg dist/",
     "watch": "tsc -w",
     "serve": "lite-server",
-    "deploy": "gh-pages -d ."
+    "deploy": "gh-pages -d dist"
   },
   "devDependencies": {
     "gh-pages": "^6.3.0",
