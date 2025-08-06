@@ -10,182 +10,301 @@
     <script type="module" src="dist/index.js"></script>
   </head>
   <body>
-    <div class="matrix-background">
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-progress">
+      <div class="scroll-progress-bar" id="scrollProgressBar"></div>
+    </div>
+
+    <!-- Floating Navigation -->
+    <div class="floating-nav" id="floatingNav">
+      <div class="nav-dot active" data-section="about" title="About Me"></div>
+      <div class="nav-dot" data-section="skills" title="Skills"></div>
+      <div class="nav-dot" data-section="projects" title="Projects"></div>
+      <div class="nav-dot" data-section="experience" title="Experience"></div>
+      <div class="nav-dot" data-section="education" title="Education"></div>
+      <div class="nav-dot" data-section="contact" title="Contact"></div>
+    </div>
+
+    <div class="matrix-background matrix-enhanced">
       <canvas id="matrixCanvas"></canvas>
     </div>
+    
+    <!-- 3D Particles Container -->
+    <div id="particles3d" class="particles"></div>
+    
     <div id="portfolioSections" class="container">
       
     </div>
-    <h1>WELCOME TO MY PORTFOLIO</h1>
-    <hr class="glow-line">
+    <div class="hero-section glass-card gradient-border">
+      <h1>WELCOME TO MY PORTFOLIO</h1>
+      <div class="hero-subtitle">
+        <span class="typing-effect">Engineering & Technology Enthusiast</span>
+      </div>
+      <hr class="glow-line">
+    </div>
+    
     <div class="container">
-      <div class="tabs">
-        <button class="tab-button active" data-tab="about">About Me</button>
-        <button class="tab-button" data-tab="skills">Skills</button>
-        <button class="tab-button" data-tab="projects">Projects</button>
-        <button class="tab-button" data-tab="experience">Experience</button>
-        <button class="tab-button" data-tab="education">Education</button>
-        <button class="tab-button" data-tab="contact">Contact</button>
-        <button onclick="window.location.href='https://research-mocha.vercel.app';" class="tab-button">My Research</button>
+      <div class="tabs glass-card">
+        <button class="tab-button active gradient-border" data-tab="about">About Me</button>
+        <button class="tab-button gradient-border" data-tab="skills">Skills</button>
+        <button class="tab-button gradient-border" data-tab="projects">Projects</button>
+        <button class="tab-button gradient-border" data-tab="experience">Experience</button>
+        <button class="tab-button gradient-border" data-tab="education">Education</button>
+        <button class="tab-button gradient-border" data-tab="contact">Contact</button>
+        <button onclick="window.location.href='https://research-mocha.vercel.app';" class="tab-button gradient-border">My Research</button>
       </div>
 
       <div id="about" class="tab-content active">
-        
-        <h2>About Me</h2>
-        <h3>FRANK KUSI APPIAH</h3>
-        <div class="about-content">
-          <img src="passport.png" alt="Frank Kusi Appiah's Passport Photo" class="circle-frame" />
-          <div class="about-text">
-            <p>My name is Frank Kusi Appiah. I am a student at Oberlin College, studying computer science. I come from Ghana, where my love for technology began when I was a kid. I used to take apart TV remotes and fix radios just to see how they worked. That curiosity never left me.</p>
-            <p>As I grew older, I started to notice how the environment around me was changing. There were longer dry seasons, less rain, and farmers were finding it harder to grow enough food. This made me realize how important it is to take care of our planet. That is when I began to care deeply about sustainability.</p>
-            <p>To me, sustainability means using what we have in a smart way so that we do not run out of it. It means helping people today while making sure that the future is safe and full of possibilities. I believe that technology can help us do that. It can help us save water, grow more food, reduce pollution, use clean energy, and protect nature.</p>
-            <p>My dream is to build tools and machines that support small farmers, help communities manage clean water, reduce waste, and use energy in smarter ways. I want to create systems that make everyday life better without harming the planet. I believe true sustainability touches every part of life, from food and water to energy and the way we live with the environment. I want to be part of a future where people and nature grow together in harmony. This is the reason I study computer science and the reason I care so much about the work I do.</p>
+        <div class="content-card glass-card gradient-border">
+          <h2>About Me</h2>
+          <h3 class="gradient-text">FRANK KUSI APPIAH</h3>
+          <div class="contact-info">
+            <p>🎓 Computer Science & Mathematics Student at Oberlin College</p>
+            <p>📧 fkusiapp@oberlin.edu | 📞 (440) 213-6865</p>
+            <p>📍 Oberlin, OH | 🌍 Originally from Ghana</p>
+          </div>
+          <div class="about-content">
+            <div class="profile-image-container glass-card">
+              <img src="passport.png" alt="Frank Kusi Appiah's Professional Photo" class="circle-frame animated-image" />
+              <div class="image-glow"></div>
+            </div>
+            <div class="about-text glass-card">
+              <div class="text-block animate-on-scroll">
+                <p>I'm Frank Kusi Appiah, an engineering and technology enthusiast currently pursuing a BA in Computer Science and Mathematics at Oberlin College. Originally from Ghana, my passion for technology ignited in childhood when I would disassemble TV remotes and repair radios, driven by an insatiable curiosity to understand how things work.</p>
+              </div>
+              <div class="text-block animate-on-scroll">
+                <p>As a Hardware & Software Manager for Oberlin's Environmental Dashboard, I manage 30+ sensors and 25+ public displays, deploying solar-powered monitoring stations and engineering cloud-connected databases that process over 10,000 data points daily. My work bridges the gap between environmental sustainability and cutting-edge technology.</p>
+              </div>
+              <div class="text-block animate-on-scroll">
+                <p>Through my research in Data Science & Micro-Agriculture, I've trained machine learning models achieving 85% accuracy, deployed environmental sensor networks, and built real-time monitoring systems that reduced water usage by 30%. I believe technology is the key to addressing climate challenges and creating sustainable solutions for communities worldwide.</p>
+              </div>
+              <div class="text-block animate-on-scroll">
+                <p>My experience spans from implementing AWS Cognito authentication systems as a Software Engineer Intern to leading 25+ soccer players as team captain. As a STRONG STEM Scholar (top 2% selection) and active member of the African Student Association, I'm committed to using technology to build tools that support communities, manage resources efficiently, and create a sustainable future where people and nature thrive together.</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
       <!--SKILLS-->
       <div id="skills" class="tab-content">
-        <h2>Skills</h2>
-        <div class="skills-grid">
-          <div class="skill-item">
-            <i class="fab fa-python"></i>
-            <h4>Python</h4>
-            <div class="skill-level">Intermediate</div>
+        <div class="content-card glass-card gradient-border">
+          <h2>Technical Skills</h2>
+          
+          <h3>Languages & Frameworks</h3>
+          <div class="skills-grid">
+            <div class="skill-item glass-card">
+              <i class="fab fa-python"></i>
+              <h4>Python</h4>
+              <div class="skill-level">Advanced</div>
+            </div>
+            <div class="skill-item glass-card">
+              <i class="fab fa-java"></i>
+              <h4>Java</h4>
+              <div class="skill-level">Intermediate</div>
+            </div>
+            <div class="skill-item glass-card">
+              <i class="fab fa-js"></i>
+              <h4>TypeScript</h4>
+              <div class="skill-level">Advanced</div>
+            </div>
+            <div class="skill-item glass-card">
+              <i class="fab fa-node-js"></i>
+              <h4>Node.js</h4>
+              <div class="skill-level">Advanced</div>
+            </div>
+            <div class="skill-item glass-card">
+              <i class="fas fa-mobile-alt"></i>
+              <h4>Dart (Flutter)</h4>
+              <div class="skill-level">Intermediate</div>
+            </div>
+            <div class="skill-item glass-card">
+              <i class="fab fa-html5"></i>
+              <h4>HTML</h4>
+              <div class="skill-level">Advanced</div>
+            </div>
+            <div class="skill-item glass-card">
+              <i class="fab fa-css3-alt"></i>
+              <h4>CSS</h4>
+              <div class="skill-level">Advanced</div>
+            </div>
+            <div class="skill-item glass-card">
+              <i class="fab fa-js"></i>
+              <h4>JavaScript</h4>
+              <div class="skill-level">Advanced</div>
+            </div>
+            <div class="skill-item glass-card">
+              <i class="fas fa-wind"></i>
+              <h4>Tailwind CSS</h4>
+              <div class="skill-level">Advanced</div>
+            </div>
           </div>
-          <div class="skill-item">
-            <i class="fab fa-java"></i>
-            <h4>Java</h4>
-            <div class="skill-level">Beginner</div>
+
+          <h3>Hardware & IoT</h3>
+          <div class="skills-grid">
+            <div class="skill-item glass-card">
+              <i class="fas fa-microchip"></i>
+              <h4>ESP32 Microcontrollers</h4>
+              <div class="skill-level">Advanced</div>
+            </div>
+            <div class="skill-item glass-card">
+              <i class="fas fa-water"></i>
+              <h4>Mayfly Data Loggers</h4>
+              <div class="skill-level">Advanced</div>
+            </div>
+            <div class="skill-item glass-card">
+              <i class="fas fa-thermometer-half"></i>
+              <h4>Environmental Sensors</h4>
+              <div class="skill-level">Expert</div>
+            </div>
+            <div class="skill-item glass-card">
+              <i class="fas fa-tools"></i>
+              <h4>Soldering & Circuit Assembly</h4>
+              <div class="skill-level">Advanced</div>
+            </div>
           </div>
-          <div class="skill-item">
-            <i class="fas fa-mobile-alt"></i>
-            <h4>Dart</h4>
-            <div class="skill-level">Intermediate</div>
+
+          <h3>Machine Learning & Data Science</h3>
+          <div class="skills-grid">
+            <div class="skill-item glass-card">
+              <i class="fas fa-brain"></i>
+              <h4>scikit-learn</h4>
+              <div class="skill-level">Advanced</div>
+            </div>
+            <div class="skill-item glass-card">
+              <i class="fas fa-tree"></i>
+              <h4>Random Forest</h4>
+              <div class="skill-level">Advanced</div>
+            </div>
+            <div class="skill-item glass-card">
+              <i class="fas fa-vector-square"></i>
+              <h4>SVM & Linear Regression</h4>
+              <div class="skill-level">Advanced</div>
+            </div>
+            <div class="skill-item glass-card">
+              <i class="fas fa-chart-line"></i>
+              <h4>Model Evaluation</h4>
+              <div class="skill-level">Advanced</div>
+            </div>
           </div>
-          <div class="skill-item">
-            <i class="fab fa-html5"></i>
-            <h4>HTML</h4>
-            <div class="skill-level">Advanced</div>
+
+          <h3>Data & Cloud Technologies</h3>
+          <div class="skills-grid">
+            <div class="skill-item glass-card">
+              <i class="fas fa-database"></i>
+              <h4>MySQL</h4>
+              <div class="skill-level">Advanced</div>
+            </div>
+            <div class="skill-item glass-card">
+              <i class="fas fa-chart-area"></i>
+              <h4>Grafana</h4>
+              <div class="skill-level">Expert</div>
+            </div>
+            <div class="skill-item glass-card">
+              <i class="fab fa-aws"></i>
+              <h4>AWS (Cognito)</h4>
+              <div class="skill-level">Intermediate</div>
+            </div>
+            <div class="skill-item glass-card">
+              <i class="fas fa-stream"></i>
+              <h4>Real-Time Pipelines</h4>
+              <div class="skill-level">Advanced</div>
+            </div>
           </div>
-          <div class="skill-item">
-            <i class="fab fa-css3-alt"></i>
-            <h4>CSS</h4>
-            <div class="skill-level">Advanced</div>
+
+          <h3>Developer Tools</h3>
+          <div class="skills-grid">
+            <div class="skill-item glass-card">
+              <i class="fab fa-git-alt"></i>
+              <h4>Git</h4>
+              <div class="skill-level">Advanced</div>
+            </div>
+            <div class="skill-item glass-card">
+              <i class="fab fa-github"></i>
+              <h4>GitHub</h4>
+              <div class="skill-level">Advanced</div>
+            </div>
+            <div class="skill-item glass-card">
+              <i class="fas fa-cogs"></i>
+              <h4>SolarWinds</h4>
+              <div class="skill-level">Advanced</div>
+            </div>
+            <div class="skill-item glass-card">
+              <i class="fas fa-table"></i>
+              <h4>Excel</h4>
+              <div class="skill-level">Advanced</div>
+            </div>
           </div>
-          <div class="skill-item">
-            <i class="fab fa-js"></i>
-            <h4>JavaScript</h4>
-            <div class="skill-level">Intermediate</div>
-          </div>
-          <div class="skill-item">
-            <i class="fab fa-node-js"></i>
-            <h4>Node.JS</h4>
-            <div class="skill-level">Intermediate</div>
-          </div>
-          <div class="skill-item">
-            <i class="fab fa-js"></i>
-            <h4>TypeScript</h4>
-            <div class="skill-level">Beginner</div>
-          </div>
-          <div class="skill-item">
-            <i class="fab fa-github"></i>
-            <h4>GitHub</h4>
-            <div class="skill-level">Intermediate</div>
-          </div>
-          <div class="skill-item">
-            <i class="fas fa-code-branch"></i>
-            <h4>Git</h4>
-            <div class="skill-level">Intermediate</div>
-          </div>
-          <div class="skill-item">
-            <i class="fas fa-table"></i>
-            <h4>Excel</h4>
-            <div class="skill-level">Intermediate</div>
-          </div>
-          <div class="skill-item">
-            <i class="fas fa-file-powerpoint"></i>
-            <h4>PowerPoint</h4>
-            <div class="skill-level">Intermediate</div>
-          </div>
-        </div>
-        <h2>Languages</h2>
-        <div class="skills-grid">
-          <div class="skill-item">
-            <i class="fas fa-language"></i>
-            <h4>English</h4>
-            <div class="skill-level">Fluent</div>
-          </div>
-          <div class="skill-item">
-            <i class="fas fa-language"></i>
-            <h4>Akan</h4>
-            <div class="skill-level">Fluent</div>
+
+          <h3>Languages Spoken</h3>
+          <div class="skills-grid">
+            <div class="skill-item glass-card">
+              <i class="fas fa-language"></i>
+              <h4>English</h4>
+              <div class="skill-level">Fluent</div>
+            </div>
+            <div class="skill-item glass-card">
+              <i class="fas fa-language"></i>
+              <h4>Akan</h4>
+              <div class="skill-level">Native</div>
+            </div>
           </div>
         </div>
       </div>
 
       <div id="experience" class="tab-content">
-        <h2>Experience</h2>
-        <div class="timeline">
-          <div class="timeline-item">
-            <div class="timeline-content">
-              <h3>Software Engineer Intern</h3>
-              <h4>Anansenet Company Limited</h4>
-              <p class="timeline-date">Nov 2024 - Present</p>
-              <ul>
-                <li>Developed scalable web-based applications, improving system efficiency.</li>
-                <li>Collaborated with cross-functional teams to design and implement new features.</li>
-                <li>Debugged and resolved critical software issues, reducing downtime by 30%.</li>
-                <li>Gained hands-on experience with Agile methodologies and version control systems like Git.</li>
-              </ul>
+        <div class="content-card glass-card gradient-border">
+          <h2>Experience</h2>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-content glass-card">
+                <h3>Hardware & Software Manager</h3>
+                <h4>Oberlin College Environmental Dashboard – Summer Fellowship</h4>
+                <p class="timeline-date">June 2025 – Present</p>
+                <ul>
+                  <li>Managed 30+ sensors and 25+ public dashboard displays for 3,000+ students and faculty</li>
+                  <li>Deployed solar-powered air/water quality stations using PurpleAir and Mayfly data loggers</li>
+                  <li>Engineered a cloud-connected database using Sheet API, transmitting 10,000+ data points daily</li>
+                  <li>Built a real-time Grafana dashboard to monitor 30+ sensor statuses and improve response</li>
+                </ul>
+              </div>
             </div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-content">
-              <h3>Help Desk Technology Consultant</h3>
-              <h4>Center for Information Technology, Oberlin College</h4>
-              <p class="timeline-date">Aug 2024 - Present</p>
-              <ul>
-                <li>Served as a liaison between students, faculty, staff, and professional CIT members, reporting to the Help Desk Coordinator.</li>
-                <li>Provided first-level software and networking support for the Oberlin College community, addressing issues related to
-                  macOS, Windows, Microsoft Office, web browsers, OCApps, printing, and network connections.</li>
-                <li>Entered and tracked all support requests via SolarWinds work order system, escalating complex issues to professional
-                  staff when necessary.</li>
-              </ul>
+            <div class="timeline-item">
+              <div class="timeline-content glass-card">
+                <h3>Software Engineer Intern</h3>
+                <h4>Anansenet – Remote, Ghana</h4>
+                <p class="timeline-date">Nov 2024 – Jan 2025</p>
+                <ul>
+                  <li>Implemented AWS Cognito authentication system, reducing unauthorized access by 35%</li>
+                  <li>Built and maintained 10+ interfaces using Tailwind CSS and TypeScript</li>
+                  <li>Reviewed 50+ code submissions for security and maintainability</li>
+                  <li>Strengthened authentication and reduced security vulnerabilities by 40%</li>
+                </ul>
+              </div>
             </div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-content">
-              <h3>CodePath Student</h3>
-              <h4>Intro to Web Development</h4>
-              <p class="timeline-date">Aug 2024 - Present</p>
-              <ul>
-                <li>Learned the basics of JavaScript, HTML, and CSS.</li>
-                <li>Developed a responsive web application addressing climate change issues in Africa.</li>
-                <li>Implemented engaging layouts and interactive features.</li>
-              </ul>
+            <div class="timeline-item">
+              <div class="timeline-content glass-card">
+                <h3>Researcher</h3>
+                <h4>Data Science & Micro-Agriculture – Oberlin College</h4>
+                <p class="timeline-date">Jan 2025</p>
+                <ul>
+                  <li>Trained Random Forest, SVM, and Linear Regression models with up to 85% accuracy</li>
+                  <li>Deployed 8+ environmental sensors and processed 5,000+ data points/day</li>
+                  <li>Built a MySQL-backed Grafana dashboard for real-time agricultural monitoring</li>
+                  <li>Reduced water usage by 30% with data-driven recommendations</li>
+                </ul>
+              </div>
             </div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-content">
-              <h3>Customer Support</h3>
-              <h4>MTN Ghana Scancom PLC Ltd</h4>
-              <p class="timeline-date">Nov 2023 - July 2024</p>
-              <ul>
-                <li>Assisted customers with resolving technical issues related to mobile and data services, ensuring a positive customer experience.</li>
-                <li>Provided usage education and resolved issues for existing users.</li>
-                <li>Gathered feedback to enhance customer experience.</li>
-              </ul>
-            </div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-content">
-              <h3>Robotics Technician</h3>
-              <h4>Prempeh College</h4>
-              <p class="timeline-date">Nov 2022 - Sept 2023</p>
-              <ul>
-                <li>Maintained and managed lab kits.</li>
-                <li>Created catalogs, organized kits, and prepared reports for the club coach.</li>
-              </ul>
+            <div class="timeline-item">
+              <div class="timeline-content glass-card">
+                <h3>Tech Consultant</h3>
+                <h4>Oberlin IT Help Desk</h4>
+                <p class="timeline-date">Aug 2024 – May 2025</p>
+                <ul>
+                  <li>Provided technical support for 3,000+ users across macOS, Windows, and network systems</li>
+                  <li>Resolved 500+ tickets monthly; reduced average support wait time by 40%</li>
+                  <li>Managed support via SolarWinds, achieving 95% resolution within SLA</li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
@@ -215,7 +334,11 @@
               </div>
               <div class="skill-item">
                 <i class="fas fa-database"></i>
-                <h4>Data Structures-Beginner(Self-learnt)</h4>
+                <h4>Data Structures</h4>
+              </div>
+              <div class="skill-item">
+                <i class="fas fa-cogs"></i>
+                <h4>Systems Programming</h4>
               </div>
             </div>
           </div>

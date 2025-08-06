@@ -1,17 +1,26 @@
 {
-  "name": "my-portfolio",
-  "version": "1.0.0",
-  "description": "Frank Kusi Appiah's Portfolio",
+  "name": "frank-animated-portfolio",
+  "version": "2.0.0",
+  "description": "Frank Kusi Appiah's Highly Animated Portfolio - Engineering & Technology Enthusiast",
   "main": "index.ts",
   "scripts": {
     "build": "tsc && cp *.html *.css *.png *.svg dist/",
     "watch": "tsc -w",
     "serve": "lite-server",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist",
+    "dev": "concurrently \"npm run watch\" \"npm run serve\""
+  },
+  "dependencies": {
+    "three": "^0.159.0",
+    "gsap": "^3.12.2",
+    "lottie-web": "^5.12.2",
+    "particles.js": "^2.0.0"
   },
   "devDependencies": {
     "gh-pages": "^6.3.0",
     "lite-server": "^2.6.1",
-    "typescript": "^5.3.3"
+    "typescript": "^5.3.3",
+    "concurrently": "^8.2.2",
+    "@types/three": "^0.159.0"
   }
 }

@@ -91,7 +91,7 @@ function drawMatrix() {
   ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-  ctx.fillStyle = "#00ff00";
+  ctx.fillStyle = "#ffffff";
   ctx.font = "20px monospace";
 
   drops.forEach((y, x) => {

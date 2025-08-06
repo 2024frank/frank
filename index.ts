@@ -1,7 +1,13 @@
+// Enhanced Portfolio with Advanced Animations
 // Tab functionality with swipe support
 const tabButtons: NodeListOf<HTMLElement> = document.querySelectorAll(".tab-button");
 const tabContents: NodeListOf<HTMLElement> = document.querySelectorAll(".tab-content");
 const tabsContainer: HTMLElement | null = document.querySelector(".tabs");
+
+// New elements for enhanced animations
+const floatingNav: HTMLElement | null = document.querySelector("#floatingNav");
+const scrollProgressBar: HTMLElement | null = document.querySelector("#scrollProgressBar");
+const particles3dContainer: HTMLElement | null = document.querySelector("#particles3d");
 
 // Make tabs container horizontally scrollable
 if (tabsContainer) {
@@ -12,7 +18,7 @@ if (tabsContainer) {
 tabButtons.forEach(button => {
   button.addEventListener('mouseenter', () => {
     button.style.transform = 'translateY(-3px)';
-    button.style.boxShadow = '0 5px 15px rgba(0, 255, 0, 0.3)';
+                    button.style.boxShadow = '0 5px 15px rgba(0, 255, 0, 0.5)';
   });
   
   button.addEventListener('mouseleave', () => {
@@ -157,7 +163,7 @@ if (welcomeText) {
     const y = e.clientY / window.innerHeight;
     
     welcomeText.style.transform = `translate(${x * 20 - 10}px, ${y * 20 - 10}px)`;
-    welcomeText.style.textShadow = `${x * 10}px ${y * 10}px 10px rgba(0, 255, 0, 0.5)`;
+                welcomeText.style.textShadow = `${x * 10}px ${y * 10}px 10px rgba(0, 255, 0, 0.7)`;
   });
 }
 
@@ -624,4 +630,201 @@ window.addEventListener('resize', () => {
   
   // Re-run scroll reveal
   revealOnScroll();
+});
+
+// ========================
+// ENHANCED ANIMATIONS & EFFECTS
+// ========================
+
+// Scroll Progress Indicator
+function updateScrollProgress(): void {
+  if (!scrollProgressBar) return;
+  
+  const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const progress = (window.pageYOffset / totalHeight) * 100;
+  scrollProgressBar.style.transform = `scaleX(${progress / 100})`;
+}
+
+// Floating Navigation Functionality
+function initializeFloatingNav(): void {
+  if (!floatingNav) return;
+  
+  const navDots = floatingNav.querySelectorAll('.nav-dot');
+  const sections = document.querySelectorAll('.tab-content');
+  
+  // Update active navigation dot based on visible section
+  function updateActiveNav(): void {
+    let activeIndex = 0;
+    sections.forEach((section, index) => {
+      const rect = section.getBoundingClientRect();
+      if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
+        activeIndex = index;
+      }
+    });
+    
+    navDots.forEach((dot, index) => {
+      dot.classList.toggle('active', index === activeIndex);
+    });
+  }
+  
+  // Click navigation
+  navDots.forEach((dot, index) => {
+    dot.addEventListener('click', () => {
+      const sectionId = dot.getAttribute('data-section');
+      if (sectionId) {
+        switchTab(sectionId);
+        
+        // Smooth scroll to section
+        setTimeout(() => {
+          const targetSection = document.getElementById(sectionId);
+          if (targetSection) {
+            targetSection.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        }, 300);
+      }
+    });
+  });
+  
+  // Update on scroll
+  window.addEventListener('scroll', updateActiveNav);
+}
+
+// Enhanced 3D Particle System
+function create3DParticles(): void {
+  if (!particles3dContainer) return;
+  
+  const particleCount = 50;
+  
+  for (let i = 0; i < particleCount; i++) {
+    const particle = document.createElement('div');
+    particle.className = 'particle-3d';
+    
+    // Random starting position
+    particle.style.left = Math.random() * 100 + '%';
+    particle.style.animationDelay = Math.random() * 20 + 's';
+    particle.style.animationDuration = (15 + Math.random() * 10) + 's';
+    
+    // Random size variation
+    const size = 4 + Math.random() * 8;
+    particle.style.width = size + 'px';
+    particle.style.height = size + 'px';
+    
+    particles3dContainer.appendChild(particle);
+  }
+}
+
+// Intersection Observer for Scroll Animations
+function initializeScrollAnimations(): void {
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+  
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animate-on-scroll');
+        
+        // Animate text blocks with stagger
+        const textBlocks = entry.target.querySelectorAll('.text-block');
+        textBlocks.forEach((block, index) => {
+          setTimeout(() => {
+            block.classList.add('animate-on-scroll');
+          }, index * 100);
+        });
+      }
+    });
+  }, observerOptions);
+  
+  // Observe elements that should animate on scroll
+  document.querySelectorAll('.content-card, .text-block, .glass-card').forEach(el => {
+    observer.observe(el);
+  });
+}
+
+// Typing Effect for Hero Section
+function initializeTypingEffect(): void {
+  const typingElement = document.querySelector('.typing-effect');
+  if (!typingElement) return;
+  
+  const text = 'Engineering & Technology Enthusiast';
+  const textElement = typingElement as HTMLElement;
+  let index = 0;
+  
+  function typeWriter(): void {
+    if (index < text.length) {
+      textElement.textContent = text.slice(0, index + 1);
+      index++;
+      setTimeout(typeWriter, 100);
+    } else {
+      // Restart animation after delay
+      setTimeout(() => {
+        index = 0;
+        textElement.textContent = '';
+        typeWriter();
+      }, 3000);
+    }
+  }
+  
+  // Start typing effect after page load
+  setTimeout(typeWriter, 1000);
+}
+
+// Mouse Trail Effect
+function createMouseTrail(): void {
+  const trail: HTMLElement[] = [];
+  const trailLength = 10;
+  
+  document.addEventListener('mousemove', (e) => {
+    // Create new trail dot
+    const dot = document.createElement('div');
+    dot.className = 'mouse-trail-dot';
+    dot.style.position = 'fixed';
+    dot.style.left = e.clientX + 'px';
+    dot.style.top = e.clientY + 'px';
+    dot.style.width = '4px';
+    dot.style.height = '4px';
+    dot.style.background = 'var(--primary-color)';
+    dot.style.borderRadius = '50%';
+    dot.style.pointerEvents = 'none';
+    dot.style.zIndex = '999';
+    dot.style.opacity = '0.7';
+    dot.style.transition = 'opacity 0.5s ease';
+    
+    document.body.appendChild(dot);
+    trail.push(dot);
+    
+    // Remove old trail dots
+    if (trail.length > trailLength) {
+      const oldDot = trail.shift();
+      if (oldDot) {
+        oldDot.style.opacity = '0';
+        setTimeout(() => {
+          if (oldDot.parentNode) {
+            oldDot.parentNode.removeChild(oldDot);
+          }
+        }, 500);
+      }
+    }
+  });
+}
+
+// Initialize all enhanced features
+document.addEventListener('DOMContentLoaded', () => {
+  // Add small delay to ensure DOM is fully loaded
+  setTimeout(() => {
+    initializeFloatingNav();
+    create3DParticles();
+    initializeScrollAnimations();
+    initializeTypingEffect();
+    createMouseTrail();
+    
+    // Update scroll progress on scroll
+    window.addEventListener('scroll', updateScrollProgress);
+    
+    console.log('🚀 Enhanced Portfolio Animations Loaded Successfully!');
+  }, 100);
 }); 
