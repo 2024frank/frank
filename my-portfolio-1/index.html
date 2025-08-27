@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Frank Kusi Appiah Portfolio</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <script type="module" src="dist/index.js"></script>
+  </head>
+  <body>
+    <div class="matrix-background">
+      <canvas id="matrixCanvas"></canvas>
+    </div>
+    <div id="portfolioSections" class="container">
+      
+    </div>
+    <h1>WELCOME TO MY PORTFOLIO</h1>
+    <hr class="glow-line">
+    <div class="container">
+      <div class="tabs">
+        <button class="tab-button active" data-tab="about">About Me</button>
+        <button class="tab-button" data-tab="skills">Skills</button>
+        <button class="tab-button" data-tab="projects">Projects</button>
+        <button class="tab-button" data-tab="experience">Experience</button>
+        <button class="tab-button" data-tab="education">Education</button>
+        <button class="tab-button" data-tab="contact">Contact</button>
+        <button onclick="window.location.href='https://research-mocha.vercel.app';" class="tab-button">My Research</button>
+      </div>
+
+      <div id="about" class="tab-content active">
+        
+        <h2>About Me</h2>
+        <h3>FRANK KUSI APPIAH</h3>
+        <div class="about-content">
+          <img src="passport.png" alt="Frank Kusi Appiah's Passport Photo" class="circle-frame" />
+          <div class="about-text">
+            <p>My name is Frank Kusi Appiah. I am a student at Oberlin College, studying computer science. I come from Ghana, where my love for technology began when I was a kid. I used to take apart TV remotes and fix radios just to see how they worked. That curiosity never left me.</p>
+            <p>As I grew older, I started to notice how the environment around me was changing. There were longer dry seasons, less rain, and farmers were finding it harder to grow enough food. This made me realize how important it is to take care of our planet. That is when I began to care deeply about sustainability.</p>
+            <p>To me, sustainability means using what we have in a smart way so that we do not run out of it. It means helping people today while making sure that the future is safe and full of possibilities. I believe that technology can help us do that. It can help us save water, grow more food, reduce pollution, use clean energy, and protect nature.</p>
+            <p>My dream is to build tools and machines that support small farmers, help communities manage clean water, reduce waste, and use energy in smarter ways. I want to create systems that make everyday life better without harming the planet. I believe true sustainability touches every part of life, from food and water to energy and the way we live with the environment. I want to be part of a future where people and nature grow together in harmony. This is the reason I study computer science and the reason I care so much about the work I do.</p>
+          </div>
+        </div>
+      </div>
+      <!--SKILLS-->
+      <div id="skills" class="tab-content">
+        <h2>Skills</h2>
+        <div class="skills-grid">
+          <div class="skill-item">
+            <i class="fab fa-python"></i>
+            <h4>Python</h4>
+            <div class="skill-level">Intermediate</div>
+          </div>
+          <div class="skill-item">
+            <i class="fab fa-java"></i>
+            <h4>Java</h4>
+            <div class="skill-level">Beginner</div>
+          </div>
+          <div class="skill-item">
+            <i class="fas fa-mobile-alt"></i>
+            <h4>Dart</h4>
+            <div class="skill-level">Intermediate</div>
+          </div>
+          <div class="skill-item">
+            <i class="fab fa-html5"></i>
+            <h4>HTML</h4>
+            <div class="skill-level">Advanced</div>
+          </div>
+          <div class="skill-item">
+            <i class="fab fa-css3-alt"></i>
+            <h4>CSS</h4>
+            <div class="skill-level">Advanced</div>
+          </div>
+          <div class="skill-item">
+            <i class="fab fa-js"></i>
+            <h4>JavaScript</h4>
+            <div class="skill-level">Intermediate</div>
+          </div>
+          <div class="skill-item">
+            <i class="fab fa-node-js"></i>
+            <h4>Node.JS</h4>
+            <div class="skill-level">Intermediate</div>
+          </div>
+          <div class="skill-item">
+            <i class="fab fa-js"></i>
+            <h4>TypeScript</h4>
+            <div class="skill-level">Beginner</div>
+          </div>
+          <div class="skill-item">
+            <i class="fab fa-github"></i>
+            <h4>GitHub</h4>
+            <div class="skill-level">Intermediate</div>
+          </div>
+          <div class="skill-item">
+            <i class="fas fa-code-branch"></i>
+            <h4>Git</h4>
+            <div class="skill-level">Intermediate</div>
+          </div>
+          <div class="skill-item">
+            <i class="fas fa-table"></i>
+            <h4>Excel</h4>
+            <div class="skill-level">Intermediate</div>
+          </div>
+          <div class="skill-item">
+            <i class="fas fa-file-powerpoint"></i>
+            <h4>PowerPoint</h4>
+            <div class="skill-level">Intermediate</div>
+          </div>
+        </div>
+        <h2>Languages</h2>
+        <div class="skills-grid">
+          <div class="skill-item">
+            <i class="fas fa-language"></i>
+            <h4>English</h4>
+            <div class="skill-level">Fluent</div>
+          </div>
+          <div class="skill-item">
+            <i class="fas fa-language"></i>
+            <h4>Akan</h4>
+            <div class="skill-level">Fluent</div>
+          </div>
+        </div>
+      </div>
+
+      <div id="experience" class="tab-content">
+        <h2>Experience</h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-content">
+              <h3>Software Engineer Intern</h3>
+              <h4>Anansenet Company Limited</h4>
+              <p class="timeline-date">Nov 2024 - Present</p>
+              <ul>
+                <li>Developed scalable web-based applications, improving system efficiency.</li>
+                <li>Collaborated with cross-functional teams to design and implement new features.</li>
+                <li>Debugged and resolved critical software issues, reducing downtime by 30%.</li>
+                <li>Gained hands-on experience with Agile methodologies and version control systems like Git.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-content">
+              <h3>Help Desk Technology Consultant</h3>
+              <h4>Center for Information Technology, Oberlin College</h4>
+              <p class="timeline-date">Aug 2024 - Present</p>
+              <ul>
+                <li>Served as a liaison between students, faculty, staff, and professional CIT members, reporting to the Help Desk Coordinator.</li>
+                <li>Provided first-level software and networking support for the Oberlin College community, addressing issues related to
+                  macOS, Windows, Microsoft Office, web browsers, OCApps, printing, and network connections.</li>
+                <li>Entered and tracked all support requests via SolarWinds work order system, escalating complex issues to professional
+                  staff when necessary.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-content">
+              <h3>CodePath Student</h3>
+              <h4>Intro to Web Development</h4>
+              <p class="timeline-date">Aug 2024 - Present</p>
+              <ul>
+                <li>Learned the basics of JavaScript, HTML, and CSS.</li>
+                <li>Developed a responsive web application addressing climate change issues in Africa.</li>
+                <li>Implemented engaging layouts and interactive features.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-content">
+              <h3>Customer Support</h3>
+              <h4>MTN Ghana Scancom PLC Ltd</h4>
+              <p class="timeline-date">Nov 2023 - July 2024</p>
+              <ul>
+                <li>Assisted customers with resolving technical issues related to mobile and data services, ensuring a positive customer experience.</li>
+                <li>Provided usage education and resolved issues for existing users.</li>
+                <li>Gathered feedback to enhance customer experience.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-content">
+              <h3>Robotics Technician</h3>
+              <h4>Prempeh College</h4>
+              <p class="timeline-date">Nov 2022 - Sept 2023</p>
+              <ul>
+                <li>Maintained and managed lab kits.</li>
+                <li>Created catalogs, organized kits, and prepared reports for the club coach.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--EDUCATION AND ACHIEVEMENTS-->
+      <div id="education" class="tab-content">
+        <h2>Education</h2>
+        <div class="education-grid">
+          <div class="education-item">
+            <h3>Bachelor of Arts in Computer Science & Mathematics</h3>
+            <h4>Oberlin College of Arts and Sciences</h4>
+            <p class="education-date">Class of 2028</p>
+            <div class="skills-grid">
+              <div class="skill-item">
+                <i class="fas fa-brain"></i>
+                <i class="fas fa-vial"></i>
+                <h4>Research and Reasoning</h4>
+              </div>
+              <div class="skill-item">
+                <i class="fas fa-brain"></i>
+                <i class="fas fa-code"></i>
+                <h4>Algorithmic Thinking & Problem-Solving with Python</h4>
+              </div>
+              <div class="skill-item">
+                <i class="fas fa-calculator"></i>
+                <h4>Calculus I</h4>
+              </div>
+              <div class="skill-item">
+                <i class="fas fa-database"></i>
+                <h4>Data Structures-Beginner(Self-learnt)</h4>
+              </div>
+            </div>
+          </div>
+          <div class="education-item">
+            <h3>West African Senior Secondary Certificate Exams (WASSCE)</h3>
+            <h4>Prempeh College</h4>
+            <p class="education-date">March 2020 - September 2023</p>
+            <div class="skills-grid">
+              <div class="skill-item">
+                <i class="fas fa-calculator"></i>
+                <h4>Core Mathematics</h4>
+              </div>
+              <div class="skill-item">
+                <i class="fas fa-calculator"></i>
+                <h4>Elective Mathematics</h4>
+              </div>
+              <div class="skill-item">
+                <i class="fas fa-vial"></i>
+                <h4>Chemistry</h4>
+              </div>
+              <div class="skill-item">
+                <i class="fas fa-microscope"></i>
+                <h4>Physics</h4>
+              </div>
+              <div class="skill-item">
+                <i class="fas fa-dna"></i>
+                <h4>Biology</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!--PROJECTS-->
+
+      <div id="projects" class="tab-content">
+        <h2>Projects</h2>
+        <div class="projects-grid">
+          <div class="project">
+            <img src="visualization.png" alt="Visualization of sorting algorithms">
+            <h3>Visualizing Various Sorting Algorithms</h3>
+            <p>Developed an interactive tool to demonstrate the workings of various sorting algorithms, providing students with a visual learning aid to enhance their understanding of algorithmic concepts.</p>
+            <div class="project-tags">
+              <span class="project-tag">Python</span>
+              <span class="project-tag">Visualization</span>
+            </div>
+            <div class="project-stats">
+              <span class="project-stat">
+                <i class="fas fa-code-branch"></i>
+                <span>Commits</span>
+              </span>
+              <span class="project-stat">
+                <i class="fas fa-star"></i>
+                <span>Stars</span>
+              </span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/2024frank/Visualizing-Sorting-Algorithms" target="_blank" class="project-link">
+                  <i class="fab fa-github"></i> Source Code
+              </a>
+              <a href="https://youtu.be/KV1vWgVlwUE" target="_blank" class="project-link">
+                  <i class="fab fa-youtube"></i> Watch Demo
+              </a>
+            </div>
+          </div>
+          
+          <div class="project">
+            <img src="snow_flakes.png" alt="Koch Snowflake">
+            <h3>Fun With Recursion</h3>
+            <p>Designed intricate and visually appealing patterns using the principles of recursion. Includes Koch Snowflake and Sierpinski Carpet.</p>
+            <div class="project-tags">
+               <span class="project-tag">Python</span>
+               <span class="project-tag">Recursion</span>
+               <span class="project-tag">Graphics</span>
+            </div>
+             <div class="project-stats">
+              <span class="project-stat">
+                <i class="fas fa-code-branch"></i>
+                <span>Commits</span>
+              </span>
+              <span class="project-stat">
+                <i class="fas fa-star"></i>
+                <span>Stars</span>
+              </span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/2024frank/fun-with-recursion" target="_blank" class="project-link">
+                <i class="fab fa-github"></i> Source Code
+              </a>
+            </div>
+          </div>
+          
+          <div class="project">
+             <img src="original.png" alt="Imagegram Original Image">
+             <h3>Imagegram</h3>
+             <p>Developed an image editor that can read an image and apply user-specified filters like invert, flip, and contrast adjustment. Swipe/drag to see more filtered images.</p>
+             <div class="image-slider">
+               <img src="original.png" alt="Original Image" class="slider-item" />
+               <img src="negative.png" alt="Negative Filter" class="slider-item" />
+               <img src="grayscale.png" alt="Grayscale Filter" class="slider-item" />
+               <img src="inverted.png" alt="Vertical Flip Filter" class="slider-item" />
+             </div>
+             <div class="project-tags">
+               <span class="project-tag">Python</span>
+               <span class="project-tag">Image Processing</span>
+             </div>
+             <div class="project-stats">
+               <span class="project-stat">
+                 <i class="fas fa-code-branch"></i>
+                 <span>Commits</span>
+               </span>
+               <span class="project-stat">
+                 <i class="fas fa-star"></i>
+                 <span>Stars</span>
+               </span>
+             </div>
+             <div class="project-links">
+               <a href="https://github.com/2024frank/imagegram" target="_blank" class="project-link">
+                 <i class="fab fa-github"></i> Source Code
+               </a>
+             </div>
+          </div>
+
+          <div class="project">
+            <img src="protein.png" alt="Protein Analysis">
+            <h3>Protein Matching</h3>
+            <p>Worked on protein sequence alignment and data summarization using string and list manipulation. Focused on analyzing amino acid chains.</p>
+            <div class="project-tags">
+              <span class="project-tag">Python</span>
+              <span class="project-tag">Bioinformatics</span>
+              <span class="project-tag">Data Analysis</span>
+            </div>
+            <div class="project-stats">
+              <span class="project-stat">
+                <i class="fas fa-code-branch"></i>
+                <span>Commits</span>
+              </span>
+              <span class="project-stat">
+                <i class="fas fa-star"></i>
+                <span>Stars</span>
+              </span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/2024frank/Protein-matching" target="_blank" class="project-link">
+                <i class="fab fa-github"></i> Source Code
+              </a>
+            </div>
+          </div>
+
+          <div class="project">
+            <img src="Penguin.png" alt="Penguin Data Science">
+            <h3>Penguin Data Science</h3>
+            <p>Analyzed data on three penguin species using data science techniques to explore biodiversity and answer ecological questions.</p>
+            <div class="project-tags">
+              <span class="project-tag">Python</span>
+              <span class="project-tag">Data Science</span>
+              <span class="project-tag">Pandas</span>
+              <span class="project-tag">Matplotlib</span>
+            </div>
+            <div class="project-stats">
+               <span class="project-stat">
+                 <i class="fas fa-code-branch"></i>
+                 <span>Commits</span>
+               </span>
+               <span class="project-stat">
+                 <i class="fas fa-star"></i>
+                 <span>Stars</span>
+               </span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/2024frank/penguins" target="_blank" class="project-link">
+                <i class="fab fa-github"></i> Source Code
+              </a>
+            </div>
+          </div>
+
+          <div class="project">
+            <img src="SAT.png" alt="SAT Testing Platform">
+            <h3>Ckodon SAT Testing Platform</h3>
+            <p>Developed a web-based platform for SAT test-takers, enabling users to assess their strengths with timed sessions, grading, and personalized feedback.</p>
+             <div class="project-tags">
+               <span class="project-tag">Python</span>
+               <span class="project-tag">Web Development</span>
+               <span class="project-tag">JavaScript</span>
+             </div>
+             <div class="project-stats">
+               <span class="project-stat">
+                 <i class="fas fa-code-branch"></i>
+                 <span>Commits</span>
+               </span>
+               <span class="project-stat">
+                 <i class="fas fa-star"></i>
+                 <span>Stars</span>
+               </span>
+             </div>
+            <div class="project-links">
+              <a href="https://ckodon-sat-prep1.vercel.app" target="_blank" class="project-link">
+                <i class="fas fa-external-link-alt"></i> Visit Platform
+              </a>
+            </div>
+          </div>
+          
+          <div class="project">
+             <h3>Brilla Hackathon</h3>
+             <p>Participated in the Brilla AI Hackathon, developing an open-source, AI-powered tool to provide students from underrepresented high schools in Ghana with equal access to learning resources for the NSMQ National competition.</p>
+             <div class="project-tags">
+               <span class="project-tag">Python</span>
+               <span class="project-tag">Jupyter Notebooks</span>
+               <span class="project-tag">AI</span>
+               <span class="project-tag">Hackathon</span>
+               <span class="project-tag">Open Source</span>
+               <span class="project-tag">Education</span>
+             </div>
+             <div class="project-stats">
+               <span class="project-stat">
+                 <i class="fas fa-code-branch"></i>
+                 <span>Commits</span>
+               </span>
+               <span class="project-stat">
+                 <i class="fas fa-star"></i>
+                 <span>Stars</span>
+               </span>
+             </div>
+             <div class="project-links">
+               <a href="https://github.com/KofiEnni9/Danso" target="_blank" class="project-link">
+                 <i class="fab fa-github"></i> Danso Project
+               </a>
+             </div>
+          </div>
+          
+        </div>
+      </div>
+      <!-- EXPERIENCE-->
+      
+      <div id="experience" class="tab-content">
+        <h2>Experience</h2>
+        <div class="skills-grid">
+          <div class="skill-item">
+            <i class="fas fa-laptop-code"></i>
+            <h4>Software Engineer Intern</h4>
+            <h5>Anansenet Company Limited</h5>
+            <p class="timeline-date">Nov 2024 - Present</p>
+            <ul>
+              <li>Developed scalable web-based applications, improving system efficiency.</li>
+              <li>Collaborated with cross-functional teams to design and implement new features.</li>
+              <li>Debugged and resolved critical software issues, reducing downtime by 30%.</li>
+              <li>Gained hands-on experience with Agile methodologies and version control systems like Git.</li>
+            </ul>
+          </div>
+          <div class="skill-item">
+            <i class="fas fa-tools"></i>
+            <h4>Help Desk Technology Consultant</h4>
+            <h5>Center for Information Technology, Oberlin College</h5>
+            <p class="timeline-date">Aug 2024 - Present</p>
+            <ul>
+              <li>Served as a liaison between students, faculty, staff, and professional CIT members.</li>
+              <li>Provided first-level software and networking support.</li>
+              <li>Tracked support requests via SolarWinds, escalating complex issues as necessary.</li>
+            </ul>
+          </div>
+          <div class="skill-item">
+            <i class="fas fa-code"></i>
+            <h4>CodePath Student</h4>
+            <h5>Intro to Web Development</h5>
+            <p class="timeline-date">Aug 2024 - Present</p>
+            <ul>
+              <li>Learned the basics of JavaScript, HTML, and CSS.</li>
+              <li>Developed a responsive web application addressing climate change issues in Africa.</li>
+              <li>Implemented engaging layouts and interactive features.</li>
+            </ul>
+          </div>
+          <div class="skill-item">
+            <i class="fas fa-mobile-alt"></i>
+            <h4>Customer Support</h4>
+            <h5>MTN Ghana Scancom PLC Ltd</h5>
+            <p class="timeline-date">Nov 2023 - August 2024</p>
+            <ul>
+              <li>Assisted customers with resolving technical issues related to mobile and data services, ensuring a positive customer experience. </li>
+              <li>Handled inquiries related to billing, account management, and service activation, providing timely and accurate information.</li>
+              <li>Collaborated with technical teams to escalate and troubleshoot complex problems, achieving a high-resolution rate for customer complaints.</li>
+            </ul>
+          </div>
+          <div class="skill-item">
+            <i class="fas fa-robot"></i>
+            <h4>Robotics Technician</h4>
+            <h5>Prempeh College</h5>
+            <p class="timeline-date">Nov 2022 - Sept 2023</p>
+            <ul>
+              <li>Maintained and managed lab kits.</li>
+              <li>Created catalogs, organized kits, and prepared reports for the club coach.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <!--CONTACT-->
+
+      <div id="contact" class="tab-content">
+        <h2>Contact Me</h2>
+        <div class="contact-grid">
+          <div class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <h4>Email</h4>
+            <a href="mailto:fkusiapp@oberlin.edu">fkusiapp@oberlin.edu</a>
+          </div>
+          <div class="contact-item">
+            <i class="fab fa-linkedin"></i>
+            <h4>LinkedIn</h4>
+            <a href="https://www.linkedin.com/in/frank-kusi-appiah-260a95237/" target="_blank">Connect with me</a>
+          </div>
+          <div class="contact-item">
+            <i class="fab fa-github"></i>
+            <h4>GitHub</h4>
+            <a href="https://github.com/2024frank" target="_blank">View my repositories</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>
